@@ -43,6 +43,14 @@
       background-size: 200% auto;
       animation: shimmer 5s linear infinite;
     }
+    .gold-foil-text1 {
+      background: linear-gradient(135deg, #4A081D 0%, #9E1B43 35%, #3B0A3E 65%, #7A1C59 85%, #24052B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% auto;
+      animation: shimmer 5s linear infinite;
+    }
+    
 
     @keyframes shimmer {
       to { background-position: 200% center; }
@@ -70,7 +78,6 @@
 
     .darbar-card {
       background: linear-gradient(180deg, #FCF6E8 0%, #F4E6CA 100%);
-      color: var(--ink);
       border: 2.5px solid var(--gold);
       border-radius: 24px;
       position: relative;
@@ -271,10 +278,7 @@
 
       <div class="position-relative pt-2" style="z-index: 20;">
         <div class="mx-auto mb-2 rounded-circle d-flex align-items-center justify-content-center shadow" style="width: 64px; height: 64px; border: 2px solid #D4AF37; background: #1E0E29;">
-          <svg viewBox="0 0 64 64" style="width: 36px; height: 36px; color: #FCF6BA;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <path d="M16 48 L48 16 M48 48 L16 16"/>
-            <path d="M20 30 L25 18 L32 24 L39 18 L44 30 Z" fill="#D4AF37" stroke="#FCF6BA" stroke-width="1.5"/>
-          </svg>
+          <img src="images/Ranbanka.png" alt="शुभ विवाह स्थल बागावास" class="w-100 object-fit-cover" style="height:40px; border-bottom: 2px solid #D4AF37;" />
         </div>
         <p class="small fw-bold mb-1" style="color: #8B1A1A;">॥ श्री गणेशाय नमः ॥</p>
         <span class="badge rounded-pill px-3 py-2 fw-bold" style="background-color: #3E0B1D; color: #FCF6BA; border: 1px solid #D4AF37;">
@@ -285,8 +289,8 @@
       <div class="position-relative my-auto py-4" style="z-index: 20;">
         <p class="font-serif-hi fst-italic fs-5 fw-bold mb-2" style="color: #8B1A1A;">✦ शुभ मंगल परिणय ✦</p>
 
-        <div class="rounded-4 px-3 py-4 mb-3 shadow" style="background: rgba(30, 14, 41, 0.95); border: 2px solid #D4AF37;">
-          <h1 class="font-royal display-6 lh-sm gold-foil-text mb-0 fs-1">
+        <div class="rounded-4 px-3 py-4 mb-3">
+          <h1 class="font-royal display-6 lh-sm gold-foil-text1 mb-0 fs-1">
             <span>सौ.कां. भुवनेश्वरी चांपावत</span>
             <span class="d-block fs-4 font-serif-hi fst-italic my-2" style="color: #D4AF37;">संग</span>
             <span>चि.कुं. विरेन्द्रसिंह सोनगरा</span>
@@ -531,7 +535,7 @@
     <!-- 8. VENUE & DIRECTIONS -->
     <section id="venue" class="jaali-bg px-3 py-5 border-top border-bottom reveal-card" style="border-color: rgba(212,175,55,0.5) !important;">
       <div class="darbar-card overflow-hidden text-center">
-        <img src="images/venue-palace.jpg" alt="शुभ विवाह स्थल बागावास" class="w-100 object-fit-cover" style="height: 190px; border-bottom: 2px solid #D4AF37;" />
+          <img src="images/venue-palace.jpg" alt="शुभ विवाह स्थल बागावास" class="w-100 object-fit-cover" style="height: 190px; border-bottom: 2px solid #D4AF37;" />
         <div class="p-4">
           <p class="small fw-bold mb-1" style="color: #8B1A1A;">शुभ स्थल एवं निमंत्रक</p>
           <h3 class="font-royal fs-5 mb-2" style="color: #3E0B1D;">ठा.सा. भगवानसिंह पुत्र स्व. श्री डूंगरसिंहजी चांपावत</h3>
@@ -551,7 +555,8 @@
       <div class="darbar-card p-4 text-center">
         <span class="corner-ornament corner-tl"></span>
         <span class="corner-ornament corner-tr"></span>
-        <p class="small fw-bold mb-1" style="color: #8B1A1A;">आपकी स्वीकृति / पधारो सा</p>
+         <img src="images/welcome.png" alt="शुभ विवाह स्थल बागावास" class="w-100 object-fit-cover" style="height: 190px; border-bottom: 2px solid #D4AF37;"/>
+        <p class="small fw-bold mb-1" style="color: #8B1A1A;">आपका आगमन हमारा सौभाग्य</p>
         <h2 class="font-royal fs-2 mb-2" style="color: #3E0B1D;">सम्पर्क एवं आगमन सूचना</h2>
         <p class="small mb-4" style="color: #5C4433;">सीधे कॉल या व्हाट्सऐप के माध्यम से संपर्क करें:</p>
 
@@ -602,26 +607,26 @@
     </section>
 
     <!-- 10. FULL FAMILY DIRECTORY -->
-    <section class="px-3 pb-5 d-flex flex-column gap-3 reveal-card" style="background: #1E0E29;">
+    <section class="px-3 pt-3 pb-3 pb-5 d-flex flex-column gap-3 reveal-card" style="background: #fff9ef;">
       <div class="text-center mb-1">
-        <h2 class="font-royal fs-2 gold-foil-text">सादर चांपावत परिवार</h2>
+        <h2 class="font-royal fs-2" style="color: #4e0881;">सादर चांपावत परिवार</h2>
       </div>
 
       <div class="darbar-card p-4 text-center small">
         <p class="fw-bold fs-6 mb-1" style="color: #8B1A1A;">॥ स्वागताकांक्षी ॥</p>
-        <p class="fw-semibold mb-0" style="color: #271410;">कुं. महिपालसिंह, कुं. प्रदीपसिंह, भंवर मयूरध्वजसिंह</p>
+        <p class="fw-semibold mb-0" style="color: ##451069;">कुं. महिपालसिंह, कुं. प्रदीपसिंह, भंवर मयूरध्वजसिंह</p>
       </div>
 
       <div class="darbar-card p-4 text-center small">
         <p class="fw-bold fs-6 mb-1" style="color: #8B1A1A;">॥ दर्शनाभिलाषी ॥</p>
-        <p class="fw-medium lh-lg mb-0" style="color: #271410;">
+        <p class="fw-medium lh-lg mb-0" style="color: ##451069;">
           ठा.सा. कल्याणसिंह, हनुमानसिंह, गोविन्दसिंह, ऊंकारसिंह, किशनसिंह, शंकरसिंह, कृष्णकुमारसिंह, गोपालसिंह, सज्जनसिंह, पदमसिंह, विक्रमसिंह, भंवरसिंह, लक्ष्मणसिंह, जसपालसिंह एवं समस्त चांपावत परिवार - ठिकाणा बागावास (पाली)
         </p>
       </div>
 
       <div class="darbar-card p-4 text-center small">
         <p class="fw-bold fs-6 mb-1" style="color: #8B1A1A;">॥ जंवाई पक्ष ॥</p>
-        <p class="fw-medium lh-lg mb-0" style="color: #271410;">
+        <p class="fw-medium lh-lg mb-0" style="color: ##451069;">
           ठा.सा. श्री विश्वपालसिंहजी राणावत, ठि. घोसुण्डी<br />
           ठा.सा. श्री चांदसिंहजी नाथावत, ठि. ईटावा भोपजी<br />
           श्री प्रहलादसिंहजी चांपावत, ठि. बागावास<br />
@@ -631,14 +636,14 @@
 
       <div class="darbar-card p-4 text-center small">
         <p class="fw-bold fs-6 mb-1" style="color: #8B1A1A;">॥ ननिहाल पक्ष ॥</p>
-        <p class="fw-medium lh-lg mb-0" style="color: #271410;">
+        <p class="fw-medium lh-lg mb-0" style="color: ##451069;">
           श्री गिरीराजसिंहजी, श्री नैत्रपालसिंहजी, श्री सुरेन्द्रसिंहजी, श्री प्रदीपसिंहजी, श्री राघवेन्द्रसिंहजी, श्री लोकेन्द्रसिंहजी एवं समस्त भाटी परिवार - ठि. मुरौली
         </p>
       </div>
 
       <div class="darbar-card p-4 text-center small">
         <p class="fw-bold fs-6 mb-1" style="color: #8B1A1A;">॥ विशेष प्रार्थी ॥</p>
-        <p class="fw-medium lh-lg mb-0" style="color: #271410;">
+        <p class="fw-medium lh-lg mb-0" style="color: ##451069;">
           ठा.सा. श्री प्रहलादसिंहजी कुम्पावत, ठिकाणा-उतवण<br />
           ठा.सा. श्री देवेन्द्रसिंहजी उदावत, ठिकाणा-रडावास
         </p>
@@ -646,7 +651,7 @@
 
       <div class="darbar-card p-4 text-center small">
         <p class="fw-bold fs-6 mb-1" style="color: #8B1A1A;">॥ मीठी मनुहार ॥</p>
-        <p class="fw-bold fs-6 mb-0" style="color: #3E0B1D;">हम भी करेंगे आपका स्वागत — यशी, योगी, पूर्वा, कोमल</p>
+        <p class="fw-bold fs-6 mb-0" style="color: ##451069;">हम भी करेंगे आपका स्वागत — यशी, योगी, पूर्वा, कोमल</p>
       </div>
     </section>
 

@@ -247,11 +247,8 @@
   </div>
 
   <!-- Wedding Song Audio (अपना MP3 गाना audio/Song.mp3 में रखें) -->
-<audio id="wedding-song" loop preload="auto">
-  <source src="audio/Song.mp3" type="audio/mpeg" />
-  <source src="audio/song.mp3" type="audio/mpeg" />
-</audio>
-
+<audio id="wedding-song" src="audio/song.mp3" loop preload="auto"></audio>
+  
   <!-- Floating Music Toggle -->
   <button id="music-toggle" type="button" aria-label="संगीत चालू या बंद करें" class="music-fab d-flex align-items-center justify-content-center">
     <div id="music-icon-idle"><i data-lucide="music" style="width: 20px; height: 20px;"></i></div>
@@ -972,22 +969,23 @@
     }
 
     function toggleMusic(forcePlay) {
-      if (!weddingSong) return;
-      if (forcePlay === true || !isPlaying) {
-        weddingSong.play().then(() => {
-          isPlaying = true;
-          setMusicUI(true);
-          showToast("मंगल संगीत प्रारंभ हुआ");
-        }).catch(() => {
-          showToast("कृपया audio/song.mp3 फ़ाइल अपलोड करें");
-        });
-      } else {
-        weddingSong.pause();
-        isPlaying = false;
-        setMusicUI(false);
-        showToast("संगीत रोका गया");
-      }
-    }
+  if (!weddingSong) return;
+  if (forcePlay === true || !isPlaying) {
+    if (weddingSong.readyState === 0) weddingSong.load();
+    weddingSong.play().then(() => {
+      isPlaying = true;
+      setMusicUI(true);
+      showToast("मंगल संगीत प्रारंभ हुआ");
+    }).catch((err) => {
+      showToast("गाना नहीं चल सका: " + (err?.message || "audio/song.mp3 जांचें"));
+    });
+  } else {
+    weddingSong.pause();
+    isPlaying = false;
+    setMusicUI(false);
+    showToast("संगीत रोका गया");
+  }
+}
 
     document.getElementById("music-toggle")?.addEventListener("click", () => toggleMusic());
 

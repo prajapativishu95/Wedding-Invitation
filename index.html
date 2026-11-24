@@ -1031,6 +1031,21 @@
     spawnSparkles();
     document.querySelectorAll(".reveal-card").forEach(el => observer.observe(el));
     try { if (window.lucide && typeof lucide.createIcons === "function") lucide.createIcons(); } catch (e) {}
+
+    // पेज/टैब से बाहर निकलते ही गाना अपने-आप बंद हो जाए
+    function stopSongOnLeave() {
+      if (weddingSong && isPlaying) {
+        weddingSong.pause();
+        isPlaying = false;
+        setMusicUI(false);
+      }
+    }
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) stopSongOnLeave();
+    });
+    window.addEventListener("pagehide", stopSongOnLeave);
+    window.addEventListener("beforeunload", stopSongOnLeave);
   </script>
 </body>
 </html>

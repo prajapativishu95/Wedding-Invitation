@@ -55,6 +55,38 @@
       to { background-position: 200% center; }
     }
 
+    /* Royal Staggered Hero Text Animations */
+    @keyframes royalSlideLeft {
+      0% { opacity: 0; transform: translateX(-28px) translateY(10px); filter: blur(4px); }
+      100% { opacity: 1; transform: translateX(0) translateY(0); filter: blur(0); }
+    }
+    @keyframes royalSlideRight {
+      0% { opacity: 0; transform: translateX(28px) translateY(10px); filter: blur(4px); }
+      100% { opacity: 1; transform: translateX(0) translateY(0); filter: blur(0); }
+    }
+    @keyframes royalZoomBloom {
+      0% { opacity: 0; transform: scale(0.6); }
+      60% { opacity: 1; transform: scale(1.12); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes royalTrackIn {
+      0% { opacity: 0; letter-spacing: 0.3em; transform: translateY(-10px); }
+      100% { opacity: 1; letter-spacing: 0.03em; transform: translateY(0); }
+    }
+    @keyframes royalFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .hero-anim-crest { animation: royalFloat 4.5s ease-in-out infinite; }
+    .hero-anim-sub, .hero-bride, .hero-sang, .hero-groom, .hero-anim-date { opacity: 0; }
+
+    #hero.hero-play .hero-anim-sub { animation: royalTrackIn 1s ease-out 0.35s forwards; }
+    #hero.hero-play .hero-bride { animation: royalSlideLeft 1s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards; }
+    #hero.hero-play .hero-sang { animation: royalZoomBloom 0.9s ease-out 0.95s forwards; }
+    #hero.hero-play .hero-groom { animation: royalSlideRight 1s cubic-bezier(0.22, 1, 0.36, 1) 1.15s forwards; }
+    #hero.hero-play .hero-anim-date { animation: royalZoomBloom 0.9s ease-out 1.45s forwards; }
+
     .jaali-bg {
       background-color: #190B22;
       background-image:
@@ -227,14 +259,14 @@
       <div class="rounded-4 p-4 shadow-lg w-100" style="max-width: 360px; background: rgba(19, 8, 26, 0.92); backdrop-filter: blur(10px); border: 2px solid #D4AF37;">
         <p class="small fw-semibold mb-3" style="color: #FCF6BA;">॥ श्री नागणेच्या नमः ॥ • ॥ श्री बाला सती नमः ॥</p>
 
-        <div class="position-relative mx-auto mb-3 d-flex align-items-center justify-content-center pe-none" style="width: 80px; height: 80px;">
+        <div class="position-relative mx-auto mb-3 d-flex align-items-center justify-content-center pe-none hero-anim-crest" style="width: 80px; height: 80px;">
           <img src="images/Ranbanka.png" alt="रणबंका राठौड़" class="w-100 object-fit-cover" style="height: auto;" />
         </div>
 
         <p class="font-royal fs-3 gold-foil-text mb-1">पधारो सा</p>
         <p class="small fw-semibold mb-3" style="color: #D4AF37;">चंपावत परिवार • ठिकाणा-बागावास (पाली)</p>
         <h2 class="font-royal fs-2 text-white lh-sm mb-2">
-          <span>भुवनेश्वरी चंपावत</span>
+          <span>भुवनेश्वरी चांपावत</span>
           <span class="d-block fs-6 font-serif-hi fst-italic my-1" style="color: #D4AF37;">संग</span>
           <span>विरेन्द्रसिंह सोनगरा</span>
         </h2>
@@ -246,9 +278,9 @@
     </div>
   </div>
 
-  <!-- Wedding Song Audio (अपना MP3 गाना audio/Song.mp3 में रखें) -->
-<audio id="wedding-song" src="audio/song.mp3" loop preload="auto"></audio>
-  
+  <!-- Wedding Song Audio -->
+  <audio id="wedding-song" src="audio/song.mp3" loop preload="auto"></audio>
+
   <!-- Floating Music Toggle -->
   <button id="music-toggle" type="button" aria-label="संगीत चालू या बंद करें" class="music-fab d-flex align-items-center justify-content-center">
     <div id="music-icon-idle"><i data-lucide="music" style="width: 20px; height: 20px;"></i></div>
@@ -269,8 +301,8 @@
 
       <div class="position-absolute m-3 top-0 start-0 end-0 bottom-0 hero-arch-frame" style="z-index: 10;"></div>
 
-      <div class="position-relative pt-2" style="z-index: 20;">
-        <div class="mx-auto mb-2 rounded-circle d-flex align-items-center justify-content-center shadow overflow-hidden" style="width: 100px; height: 100px; border: 2px solid #D4AF37; background: #eae4d1;">
+      <div class="position-relative pt-2 hero-anim-sub" style="z-index: 20;">
+        <div class="mx-auto mb-2 rounded-circle d-flex align-items-center justify-content-center shadow overflow-hidden hero-anim-crest" style="width: 100px; height: 100px; border: 2px solid #D4AF37; background: #eae4d1;">
           <img src="images/Ranbanka.png" alt="रणबंका राठौड़" class="w-100 object-fit-cover" style="height: auto;" />
         </div>
         <p class="small fw-bold mb-1" style="color: #8B1A1A;">॥ श्री गणेशाय नमः ॥</p>
@@ -280,23 +312,23 @@
       </div>
 
       <div class="position-relative my-auto py-4" style="z-index: 20;">
-        <p class="font-serif-hi fst-italic fs-5 fw-bold mb-2" style="color: #8B1A1A;">✦ शुभ मंगल परिणय ✦</p>
+        <p class="font-serif-hi fst-italic fs-5 fw-bold mb-2 hero-anim-sub" style="color: #8B1A1A;">✦ शुभ मंगल परिणय ✦</p>
 
         <div class="rounded-4 px-3 py-4 mb-3">
           <h1 class="font-royal display-6 lh-sm gold-foil-text1 mb-0 fs-1">
-            <span>सौ.कां. भुवनेश्वरी चंपावत</span>
-            <span class="d-block fs-4 font-serif-hi fst-italic my-2" style="color: #D4AF37;">संग</span>
-            <span>चि.कुं. विरेन्द्रसिंह सोनगरा</span>
+            <span class="d-block hero-bride">सौ.कां. भुवनेश्वरी चांपावत</span>
+            <span class="d-block fs-4 font-serif-hi fst-italic my-2 hero-sang" style="color: #D4AF37;">संग</span>
+            <span class="d-block hero-groom">चि.कुं. विरेन्द्रसिंह सोनगरा</span>
           </h1>
         </div>
 
-        <div class="d-inline-flex align-items-center gap-2 px-4 py-2 rounded-pill shadow-sm fw-semibold small" style="background: #3E0B1D; color: #FCF6BA; border: 1px solid #D4AF37;">
+        <div class="d-inline-flex align-items-center gap-2 px-4 py-2 rounded-pill shadow-sm fw-semibold small hero-anim-date" style="background: #3E0B1D; color: #FCF6BA; border: 1px solid #D4AF37;">
           <span>शनिवार, 12 दिसम्बर 2026</span>
           <span style="color: #D4AF37;">◆</span>
           <span>बागावास, सोजत (पाली)</span>
         </div>
 
-        <div class="d-flex justify-content-center gap-2 mt-3">
+        <div class="d-flex justify-content-center gap-2 mt-3 hero-anim-date">
           <button id="save-cal-btn" type="button" class="btn btn-sm rounded-pill px-3 py-2 fw-semibold d-inline-flex align-items-center gap-1" style="background: #1E0E29; color: #FCF6BA; border: 1px solid #D4AF37;">
             <i data-lucide="calendar-plus" style="width: 15px; height: 15px; color: #D4AF37;"></i>
             <span>कैलेंडर में जोड़ें</span>
@@ -308,7 +340,7 @@
         </div>
       </div>
 
-      <div class="position-relative" style="z-index: 20;">
+      <div class="position-relative hero-anim-date" style="z-index: 20;">
         <a href="#crest-section" class="text-decoration-none d-inline-flex flex-column align-items-center small fw-semibold" style="color: #520E24;">
           <span>आगे पधारें</span>
           <i data-lucide="chevron-down" style="width: 18px; height: 18px;"></i>
@@ -342,7 +374,7 @@
       <hr class="mx-auto my-3" style="width: 90px; border-color: #D4AF37; opacity: 0.6;" />
       <h2 class="font-royal fs-2 gold-foil-text mb-3">सादर निमंत्रक</h2>
       <div class="rounded-4 p-3" style="background: rgba(19, 8, 26, 0.72); border: 1px solid rgba(212, 175, 55, 0.6);">
-        <p class="font-royal fs-5 mb-1" style="color: #FCF6BA;">ठा.सा. भगवानसिंह पुत्र स्व. श्री डूंगरसिंहजी चंपावत</p>
+        <p class="font-royal fs-5 mb-1" style="color: #FCF6BA;">ठा.सा. भगवानसिंह पुत्र स्व. श्री डूंगरसिंहजी चांपावत</p>
         <p class="small mb-0 fw-medium" style="color: #D4AF37;">प्रेमसागर, ठिकाणा-बागावास, तहसील सोजत, जिला पाली (राज.)</p>
       </div>
     </section>
@@ -361,9 +393,9 @@
         </p>
 
         <div>
-          <p class="font-royal fs-2 mb-1" style="color: #c91051;">सौ.कां. भुवनेश्वरी चंपावत</p>
-          <p class="small mb-0 fw-medium" style="color: #5C4433;">(सुपौत्री ठा.सा. श्री भगवानसिंहजी चंपावत)</p>
-          <p class="small mb-0 fw-medium" style="color: #5C4433;">(सुपुत्री स्व. श्री हिम्मतसिंहजी चंपावत)</p>
+          <p class="font-royal fs-2 mb-1" style="color: #c91051;">सौ.कां. भुवनेश्वरी चांपावत</p>
+          <p class="small mb-0 fw-medium" style="color: #5C4433;">(सुपौत्री ठा.सा. श्री भगवानसिंहजी चांपावत)</p>
+          <p class="small mb-0 fw-medium" style="color: #5C4433;">(सुपुत्री स्व. श्री हिम्मतसिंहजी चांपावत)</p>
         </div>
 
         <p class="font-serif-hi fst-italic fs-5 fw-bold my-2" style="color: #8B1A1A;">संग</p>
@@ -467,8 +499,8 @@
           </div>
         </div>
 
-        <p class="font-royal fs-4 gold-foil-text mb-0">भुवनेश्वरी चंपावत</p>
-        <p class="small mb-2" style="color: rgba(251,244,228,0.85);">चंपावत परिवार • ठिकाणा बागावास (पाली)</p>
+        <p class="font-royal fs-4 gold-foil-text mb-0">भुवनेश्वरी चांपावत</p>
+        <p class="small mb-2" style="color: rgba(251,244,228,0.85);">चांपावत परिवार • ठिकाणा बागावास (पाली)</p>
         <hr class="mx-auto my-2" style="width: 80px; border-color: #D4AF37; opacity: 0.6;" />
         <p class="font-royal fs-4 gold-foil-text mb-0">विरेन्द्रसिंह सोनगरा</p>
         <p class="small mb-0" style="color: rgba(251,244,228,0.85);">सोनगरा परिवार • ठिकाणा कूरना (पाली)</p>
@@ -476,7 +508,7 @@
     </section>
 
     <!-- 7. INSTAGRAM ID SHOWCASE -->
-    <section class="d-none  px-4 py-5 text-center border-top reveal-card" style="background: #2B0C20; border-color: rgba(212,175,55,0.4) !important;">
+    <section class="d-none px-4 py-5 text-center border-top reveal-card" style="background: #2B0C20; border-color: rgba(212,175,55,0.4) !important;">
       <p class="small fw-semibold mb-1" style="color: #D4AF37;">हमारी यादें और झलकियाँ</p>
       <h2 class="font-royal fs-2 gold-foil-text mb-4">इंस्टाग्राम शोकेस</h2>
 
@@ -517,7 +549,7 @@
         <img src="images/venue-palace.jpg" alt="शुभ विवाह स्थल बागावास" class="w-100 object-fit-cover" style="height: 190px; border-bottom: 2px solid #D4AF37;" />
         <div class="p-4">
           <p class="small fw-bold mb-1" style="color: #8B1A1A;">शुभ स्थल एवं निमंत्रक</p>
-          <h3 class="font-royal fs-5 mb-2" style="color: #3E0B1D;">ठा.सा. भगवानसिंह पुत्र स्व. श्री डूंगरसिंहजी चंपावत</h3>
+          <h3 class="font-royal fs-5 mb-2" style="color: #3E0B1D;">ठा.सा. भगवानसिंह पुत्र स्व. श्री डूंगरसिंहजी चांपावत</h3>
           <p class="small fw-medium mb-3" style="color: #5C4433;">प्रेमसागर, ठिकाणा-बागावास, तहसील सोजत, जिला पाली (राज.)</p>
           <a href="https://maps.google.com/?q=Bagawas,Sojat,Pali,Rajasthan" target="_blank" rel="noopener noreferrer"
             class="btn rounded-pill w-100 py-2 small fw-semibold d-inline-flex align-items-center justify-content-center gap-2"
@@ -679,12 +711,13 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // 1. ENTRANCE GATE BUTTON (सबसे पहले ताकि कभी न रुके)
+    // 1. ENTRANCE GATE BUTTON
     document.getElementById("open-invite-btn")?.addEventListener("click", () => {
       const doorContent = document.getElementById("door-content");
       if (doorContent) doorContent.style.opacity = "0";
       document.getElementById("door-left")?.classList.add("gate-left-open");
       document.getElementById("door-right")?.classList.add("gate-right-open");
+      document.getElementById("hero")?.classList.add("hero-play");
       if (typeof toggleMusic === "function" && !isPlaying) toggleMusic(true);
       setTimeout(() => {
         document.getElementById("entrance-overlay")?.classList.add("d-none");
@@ -692,17 +725,15 @@
     });
 
     const BACKEND_MEDIA = {
-      couplePhotoUrl: "", // अपना कपल फ़ोटो URL यहाँ डालें (जैसे: "images/couple.jpg")
+      couplePhotoUrl: "",
       heroArchBg: "images/hero-arch.jpg",
       venuePhoto: "images/venue-palace.jpg",
       instagramUsername: "amardigitals",
-      // 3 इंस्टाग्राम फ़ोटो के लिए सीधे इमेज URL या लोकल पाथ डालें:
       instagramPosts: [
         "images/event-mehendi.jpg",
         "images/event-sangeet.jpg",
         "images/event-baraat.jpg"
       ],
-      // वैकल्पिक: यदि आपका बैकएंड/Vercel API { images: ["url1", "url2", "url3"] } देता है तो उसका URL यहाँ डालें:
       instagramApiUrl: ""
     };
 
@@ -793,7 +824,6 @@
       `).join("");
     }
 
-    // Couple Photo (Safe Guards)
     const photoPreview = document.getElementById("couple-photo-preview");
     const photoPlaceholder = document.getElementById("couple-photo-placeholder");
 
@@ -814,7 +844,6 @@
       applyCouplePhoto(BACKEND_MEDIA.couplePhotoUrl);
     }
 
-    // Instagram Showcase Edit (Bootstrap 5 Modal)
     const igDisplay = document.getElementById("ig-handle-display");
     const igLink = document.getElementById("ig-link");
 
@@ -920,7 +949,7 @@
     });
 
     document.getElementById("share-invite-btn")?.addEventListener("click", () => {
-      const msg = "॥ श्री गणेशाय नमः ॥\nमंगल परिणय निमंत्रण\nसौ.कां. भुवनेश्वरी चंपावत संग चि.कुं. विरेन्द्रसिंह सोनगरा\nशनिवार, 12 दिसम्बर 2026\nशुभ स्थल: प्रेमसागर, ठिकाणा-बागावास, तहसील सोजत, जिला पाली (राज.)\nसंपर्क: 9717269158, 8619255306";
+      const msg = "॥ श्री गणेशाय नमः ॥\nमंगल परिणय निमंत्रण\nसौ.कां. भुवनेश्वरी चांपावत संग चि.कुं. विरेन्द्रसिंह सोनगरा\nशनिवार, 12 दिसम्बर 2026\nशुभ स्थल: प्रेमसागर, ठिकाणा-बागावास, तहसील सोजत, जिला पाली (राज.)\nसंपर्क: 9717269158, 8619255306";
       safeCopy(msg, "निमंत्रण संदेश कॉपी हो गया!");
     });
 
@@ -969,23 +998,23 @@
     }
 
     function toggleMusic(forcePlay) {
-  if (!weddingSong) return;
-  if (forcePlay === true || !isPlaying) {
-    if (weddingSong.readyState === 0) weddingSong.load();
-    weddingSong.play().then(() => {
-      isPlaying = true;
-      setMusicUI(true);
-      showToast("मंगल संगीत प्रारंभ हुआ");
-    }).catch((err) => {
-      showToast("गाना नहीं चल सका: " + (err?.message || "audio/song.mp3 जांचें"));
-    });
-  } else {
-    weddingSong.pause();
-    isPlaying = false;
-    setMusicUI(false);
-    showToast("संगीत रोका गया");
-  }
-}
+      if (!weddingSong) return;
+      if (forcePlay === true || !isPlaying) {
+        if (weddingSong.readyState === 0) weddingSong.load();
+        weddingSong.play().then(() => {
+          isPlaying = true;
+          setMusicUI(true);
+          showToast("मंगल संगीत प्रारंभ हुआ");
+        }).catch((err) => {
+          showToast("गाना नहीं चल सका: " + (err?.message || "audio/song.mp3 जांचें"));
+        });
+      } else {
+        weddingSong.pause();
+        isPlaying = false;
+        setMusicUI(false);
+        showToast("संगीत रोका गया");
+      }
+    }
 
     document.getElementById("music-toggle")?.addEventListener("click", () => toggleMusic());
 
